@@ -12,7 +12,7 @@ class UserController extends Controller {
     if (!user) {
       ctx.body = { status: 0, message: 'login failed' };
     } else {
-      ctx.session = { user };
+      console.log('session', ctx.session);
       ctx.body = { status: 1, message: 'login success' };
     }
   }
