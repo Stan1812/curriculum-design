@@ -8,13 +8,23 @@ const Controller = require('egg').Controller;
 class UserController extends Controller {
   async login() {
     const ctx = this.ctx;
-    // ctx.validate(createRule, ctx.request.body);
-    const token = await ctx.service.user.checkLogin(ctx.request.body);
-    // this.ctx.body = ;
-    ctx.body = token;
+    const user = await ctx.service.user.checkLogin(ctx.request.body);
+    if (!user) {
+      ctx.body = { status: 0, message: 'login failed' };
+    } else {
+      ctx.session = { user };
+      ctx.body = { status: 1, message: 'login success' };
+    }
   }
   async regist() {
-    this.ctx.body = 'fic';
+    const ctx = this.ctx;
+    const res = await ctx.service.user.createUser(ctx.request.body);
+    console.log(res);
+    if (res) {
+      ctx.body = { status: 1, message: 'registe success' };
+    } else {
+      ctx.body = { status: 0, message: 'user already exists' };
+    }
   }
 }
 

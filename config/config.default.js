@@ -13,7 +13,7 @@ module.exports = appInfo => {
     port: '3306',
     username: 'root',
     // XXXXXXXXX
-    password: 'KG1415926535',
+    password: 'XXXXXXXXX',
   };
   // add your config here
   config.middleware = [ 'errorHandler' ];
