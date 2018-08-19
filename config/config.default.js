@@ -12,10 +12,13 @@ module.exports = appInfo => {
     host: 'localhost',
     port: '3306',
     username: 'root',
-    password: 'XXXXXXXXX',
+    // XXXXXXXXX
+    password: 'KG1415926535',
   };
   // add your config here
-  config.middleware = [];
-
+  config.middleware = [ 'errorHandler' ];
+  config.errorHandler = {
+    match: '/',
+  };
   return config;
 };
