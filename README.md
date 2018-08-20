@@ -4,10 +4,10 @@
 
 ### RESTful style URL definition
 
-We use app.resources('routerName', 'pathMatch', 'controller') to generate CRUD structures on a path for convenience. if you prefer the RESTful style URL definition.
-For example, the codes above produce a bunch of CRUD path structures for Controller app/controller/posts.js, and the only thing you should do next is to implement related functions in posts.js.
+Using app.resources('routerName', 'pathMatch', 'controller') to generate CRUD structures (RESTful style URL definition) on a path for convenience.
 
-for example:
+For example, the codes above produce a bunch of CRUD path structures for Controller app/controller/posts.js
+
 
 | Method Path |      Route      |   Name    |       Controller.Action       |
 | ----------- | :-------------: | :-------: | :---------------------------: |
