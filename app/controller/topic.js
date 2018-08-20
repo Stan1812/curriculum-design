@@ -31,6 +31,7 @@ class TopicController extends Controller {
     }
   }
   async show() {
+    // 获取特定id topic topic/:id
     const ctx = this.ctx;
     const id = toInt(ctx.params.id);
     const res = await ctx.model.Topic.showTopic(id);
@@ -41,7 +42,6 @@ class TopicController extends Controller {
         ctx.body = { status: 0, message: 'find nothing' };
       }
     }
-    // 获取特定id topic topic/:id
   }
   async destroyed() {
     //  删除topic
