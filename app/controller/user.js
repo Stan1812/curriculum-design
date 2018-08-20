@@ -12,14 +12,13 @@ class UserController extends Controller {
     if (!user) {
       ctx.body = { status: 0, message: 'login failed' };
     } else {
-      console.log('session', ctx.session);
+      ctx.session = user.dataValues;
       ctx.body = { status: 1, message: 'login success' };
     }
   }
   async regist() {
     const ctx = this.ctx;
     const res = await ctx.service.user.createUser(ctx.request.body);
-    console.log(res);
     if (res) {
       ctx.body = { status: 1, message: 'registe success' };
     } else {

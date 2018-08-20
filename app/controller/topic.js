@@ -1,4 +1,5 @@
 'use strict';
+// 计划调用外部API来获取话题文章等,还在寻找数据来源
 const Controller = require('egg').Controller;
 function toInt(str) {
   if (typeof str === 'number') return str;

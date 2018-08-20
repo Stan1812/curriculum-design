@@ -9,6 +9,7 @@ module.exports = app => {
     await app.model.sync({ force: false }); // false 为不覆盖 true会删除再创建
   });
   router.get('/', controller.home.index);
+  router.get('/test', controller.home.test);
   router.post('/login', controller.user.login);
   router.post('/regist', controller.user.regist);
   router.post('/topic', controller.topic.create);

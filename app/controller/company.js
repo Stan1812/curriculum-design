@@ -1,4 +1,5 @@
 'use strict';
+//  逻辑较简单,不需调用外部API,未使用service中间层
 const Controller = require('egg').Controller;
 
 function toInt(str) {
