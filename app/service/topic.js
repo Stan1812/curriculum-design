@@ -4,7 +4,7 @@ const Service = require('egg').Service;
 class TopicService extends Service {
   async getTopics(query) {
     // 获取topics
-    const res = await this.ctx.model.User.findAll(query);
+    const res = await this.ctx.model.Topic.findAll(query);
     return res;
   }
   async createTopic(params) {
