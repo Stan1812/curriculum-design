@@ -12,6 +12,7 @@ module.exports = app => {
   router.get('/test', controller.home.test);
   router.post('/login', controller.user.login);
   router.post('/regist', controller.user.regist);
-  router.post('/topic', controller.topic.create);
-  // app.router.resources('topics', '/topics', app.controller.topic);
+  // router.post('/topic', controller.topic.create);
+  app.router.resources('topics', '/topics', app.controller.topic);
+  app.router.resources('company', '/company', app.controller.company);
 };
